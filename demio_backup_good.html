@@ -125,6 +125,14 @@
             margin-bottom: 1.5rem !important;
         }
     </style>
+
+<!-- Dropdown reliability helpers -->
+<style>
+  .dropdown-menu{display:none}
+  .nav-dropdown:hover .dropdown-menu{display:block}
+  .dropdown-menu:hover{display:block}
+</style>
+
 </head>
 <body class="bg-white">
 
@@ -138,40 +146,45 @@
 
 <!-- Header -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
-    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
-            <div class="flex items-center">
-                <a href="index.html" class="flex-shrink-0">
-                    <img src="https://webinarkit.net/img/webinarkit.svg" alt="WebinarKit" class="h-5 w-auto">
-                </a>
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 relative">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+          <img src="https://webinarkit.net/img/webinarkit.svg" alt="WebinarKit" class="h-8 w-auto">
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <div class="relative nav-dropdown">
+            <button id="dd-trigger" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center select-none">
+              WebinarKit Vs Competitors
+              <i class="fas fa-chevron-down ml-1 text-xs"></i>
+            </button>
+
+            <!-- Menu -->
+            <div id="dd-menu" class="dropdown-menu absolute left-0 top-full mt-2 w-64 bg-white rounded-md shadow-lg border">
+              <div class="py-1">
+                <a href="gotowebinar_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs GoToWebinar</a>
+                <a href="zoom_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs Zoom</a>
+                <a href="demio_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 bg-blue-50 font-semibold">WebinarKit vs Demio</a>
+                <a href="everwebinar_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs EverWebinar</a>
+              </div>
             </div>
-            <div class="hidden md:block">
-                <div class="ml-10 flex items-baseline space-x-8">
-                    <div class="relative group">
-                        <button class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center">
-                            WebinarKit Vs Competitors
-                            <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                        </button>
-                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                            <div class="py-1">
-                                <a href="webinarkit-vs-gotowebinar.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs GoToWebinar</a>
-                                <a href="webinarkit-vs-zoom.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs Zoom Webinars</a>
-                                <a href="webinarkit-vs-demio.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 bg-blue-50">WebinarKit vs Demio</a>
-                                <a href="webinarkit-vs-everwebinar.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs EverWebinar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="index.html#features" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</a>
-                    <a href="index.html#pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
-                </div>
-            </div>
-            <div class="md:hidden">
-                <button class="text-gray-700 hover:text-blue-600">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
+          </div>
+          <a href="index.html#features" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</a>
+          <a href="index.html#pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
         </div>
-    </nav>
+      </div>
+
+      <!-- Mobile quick link -->
+      <div class="md:hidden">
+        <a href="demio_backup_good.html" class="px-3 py-2 text-sm text-gray-700 border rounded-md">Comparisons</a>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <!-- Hero Section -->

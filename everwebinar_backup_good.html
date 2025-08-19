@@ -1,44 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-    /* robust dropdown behavior */
-    .dropdown-menu{display:none}
-    .nav-dropdown:hover .dropdown-menu{display:block}
-    .dropdown-menu:hover{display:block}
-  </style>
-  <script>
-    // Mobile/touch fallback: toggle on click, close on outside click
-    document.addEventListener('DOMContentLoaded', function(){
-      var btn = document.getElementById('dd-trigger');
-      var menu = document.getElementById('dd-menu');
-      if(!btn || !menu) return;
-      btn.addEventListener('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
-        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-      });
-      document.addEventListener('click', function(e){
-        if(!menu.contains(e.target) && !btn.contains(e.target)){
-          menu.style.display = 'none';
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebinarKit vs EverWebinar - Complete Comparison 2024</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .video-container { 
+            position: relative; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            background: linear-gradient(145deg, #f8fafc, #e2e8f0);
+            padding: 8px;
         }
-      });
-      // Hide on navigation
-      menu.querySelectorAll('a').forEach(function(a){
-        a.addEventListener('click', function(){ menu.style.display = 'none'; });
-      });
-    });
-  </script>
-  <title>WebinarKit vs EverWebinar</title>
+        .video-container video {
+            width: 100%;
+            border-radius: 12px;
+        }
+        .pricing-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+        .annual-highlight {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+        }
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 3rem;
+        }
+        .red-banner {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
+        .slider-container {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+        
+        /* Updated comparison table styles with light green borders */
+        .comparison-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border: 2px solid #86efac;
+        }
+        .comparison-table th {
+            background: linear-gradient(135deg, #1e40af, #3730a3);
+            color: white;
+            font-weight: 600;
+            padding: 1rem;
+            text-align: center;
+            border-right: 1px solid #86efac;
+        }
+        .comparison-table th:first-child {
+            text-align: left;
+        }
+        .comparison-table th:last-child {
+            border-right: none;
+        }
+        .webinarkit-column {
+            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+            font-weight: 600;
+        }
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #86efac;
+            border-right: 1px solid #86efac;
+        }
+        .comparison-table td:last-child {
+            border-right: none;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+        
+        /* Feature hover effects */
+        .feature-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        /* Time saved box - smaller */
+        .time-saved-box {
+            padding: 1.5rem !important;
+        }
+        
+        /* No Brainer section - cleaner borders */
+        .no-brainer-section {
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            background: #ffffff;
+        }
+
+        /* Close spacing for top fold */
+        .hero-close-spacing {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+        }
+
+        /* Remove border/shadow from trust indicators */
+        .trust-indicators-clean {
+            box-shadow: none !important;
+            border: none !important;
+        }
+
+        /* Add spacing between pricing text and button */
+        .pricing-spacing {
+            margin-bottom: 1.5rem !important;
+        }
+    </style>
+
+<!-- Dropdown reliability helpers -->
+<style>
+  .dropdown-menu{display:none}
+  .nav-dropdown:hover .dropdown-menu{display:block}
+  .dropdown-menu:hover{display:block}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var btn = document.getElementById('dd-trigger');
+  var menu = document.getElementById('dd-menu');
+  if(!btn || !menu) return;
+  btn.addEventListener('click', function(e){
+    e.preventDefault(); e.stopPropagation();
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  });
+  document.addEventListener('click', function(e){
+    if(!menu.contains(e.target) && !btn.contains(e.target)){
+      menu.style.display = 'none';
+    }
+  });
+  menu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ menu.style.display='none'; });
+  });
+});
+</script>
+
 </head>
 <body class="bg-white">
-<!-- Header (shared across pages) -->
+
+<!-- Red Banner -->
+<div class="red-banner text-white text-center py-3 px-4">
+    <div class="flex items-center justify-center space-x-2">
+        <i class="fas fa-fire text-yellow-300"></i>
+        <span class="font-bold text-sm md:text-base">LIMITED TIME: This deal actually MAKES you money instead of costing you money</span>
+    </div>
+</div>
+
+<!-- Header -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16 relative">
@@ -72,7 +209,7 @@
         </div>
       </div>
 
-      <!-- Mobile menu button (optional) -->
+      <!-- Mobile quick link -->
       <div class="md:hidden">
         <a href="gotowebinar_backup_good.html" class="px-3 py-2 text-sm text-gray-700 border rounded-md">Comparisons</a>
       </div>
@@ -80,8 +217,703 @@
   </nav>
 </header>
 
-<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-<h1 class="text-3xl font-extrabold mb-4">WebinarKit vs EverWebinar</h1><p>Replace with your EverWebinar comparison content.</p>
-</main>
+
+<!-- Hero Section -->
+<section class="bg-gradient-to-b from-blue-50 to-white hero-close-spacing py-8 md:py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Breadcrumb -->
+        <div class="text-sm text-gray-500 mb-4">
+            <a href="index.html" class="hover:text-blue-600">WebinarKit</a>
+            <span class="mx-2">›</span>
+            <span>WebinarKit vs EverWebinar</span>
+        </div>
+        
+        <div class="text-center">
+            <div class="text-blue-600 font-bold text-sm md:text-base tracking-wider uppercase mb-3">
+                COACHES • CONSULTANTS • AGENCY OWNERS
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight">
+                WebinarKit vs EverWebinar:<br>
+                <span class="text-blue-600">Why 18,000+ Marketers</span><br>
+                Made the Switch
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-6 max-w-4xl mx-auto leading-relaxed">
+                EverWebinar is stuck in the past with manual webinar creation. WebinarKit's AI builds your entire high-converting webinar for you in 10 minutes, <span class="font-bold text-green-600">plus gives you white label rights to resell for $10K-$50K/month passive income.</span>
+            </p>
+        </div>
+
+        <!-- Trust Indicators -->
+        <div class="trust-indicators-clean bg-white rounded-2xl p-6 max-w-2xl mx-auto">
+            <div class="flex items-center justify-center space-x-2 mb-4">
+                <div class="flex text-yellow-400">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <span class="text-gray-600 font-semibold">4.8/5 Rating</span>
+            </div>
+            <p class="text-lg font-bold text-gray-800">Trusted by 18,000+ marketers, coaches, and agencies</p>
+        </div>
+    </div>
+</section>
+
+<!-- EverWebinar Problems Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                The Problem with EverWebinar
+            </h2>
+            <p class="text-xl text-red-600 font-semibold max-w-4xl mx-auto leading-relaxed">
+                EverWebinar forces you to create webinars manually, offers no AI assistance, and provides zero monetization opportunities beyond your own business.
+            </p>
+        </div>
+
+        <!-- EverWebinar Problems -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <!-- EverWebinar Issues -->
+            <div class="bg-red-50 p-8 rounded-2xl border-2 border-red-200">
+                <div class="text-center mb-6">
+                    <div class="feature-icon text-red-500 mb-4">😤</div>
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">EverWebinar Limitations</h3>
+                </div>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">❌</span> NO AI webinar creation</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">❌</span> Manual script writing required</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">❌</span> No white label rights</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">❌</span> No passive income potential</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">❌</span> Limited funnel capabilities</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">❌</span> Costs $497/month for Pro features</li>
+                    <li class="flex items-start"><span class="text-red-500 mr-3 text-xl">❌</span> Still requires 40+ hours per webinar</li>
+                </ul>
+            </div>
+
+            <!-- WebinarKit Solution -->
+            <div class="bg-green-50 p-8 rounded-2xl border-2 border-green-200">
+                <div class="text-center mb-6">
+                    <div class="feature-icon text-green-500 mb-4">🚀</div>
+                    <h3 class="text-2xl font-bold text-green-700 mb-2">WebinarKit Solution</h3>
+                </div>
+                <ul class="space-y-4 text-gray-700">
+                    <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✅</span> Full AI webinar creation in 10 minutes</li>
+                    <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✅</span> AI generates scripts using $5M+ frameworks</li>
+                    <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✅</span> Complete white label rights included</li>
+                    <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✅</span> $10K-$50K/month passive income potential</li>
+                    <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✅</span> Complete funnel builder included</li>
+                    <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✅</span> Only $83/month (saves $5,000+/year)</li>
+                    <li class="flex items-start"><span class="text-green-500 mr-3 text-xl">✅</span> 100 client subaccounts included</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Detailed Comparison Table -->
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                WebinarKit vs EverWebinar: Feature by Feature
+            </h2>
+            <p class="text-xl text-gray-600">
+                See why smart marketers are switching from EverWebinar to WebinarKit
+            </p>
+        </div>
+
+        <!-- Detailed Comparison Table -->
+        <div class="overflow-x-auto mb-12">
+            <table class="comparison-table w-full bg-white">
+                <thead>
+                    <tr>
+                        <th class="text-left">Feature</th>
+                        <th class="webinarkit-column text-white bg-gradient-to-r from-blue-600 to-blue-700">WebinarKit</th>
+                        <th>EverWebinar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="font-semibold text-gray-900">Monthly Price</td>
+                        <td class="webinarkit-column font-bold text-green-600 text-center">$83/mo*</td>
+                        <td class="text-center text-red-600 font-semibold">$497/mo</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">AI Script Generation</td>
+                        <td class="webinarkit-column text-center"><i class="fas fa-check text-green-500 text-xl"></i></td>
+                        <td class="text-center"><i class="fas fa-times text-red-500 text-xl"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">AI Slide Creation</td>
+                        <td class="webinarkit-column text-center"><i class="fas fa-check text-green-500 text-xl"></i></td>
+                        <td class="text-center"><i class="fas fa-times text-red-500 text-xl"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">White Label Rights</td>
+                        <td class="webinarkit-column text-center"><i class="fas fa-check text-green-500 text-xl"></i></td>
+                        <td class="text-center"><i class="fas fa-times text-red-500 text-xl"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">Client Subaccounts</td>
+                        <td class="webinarkit-column font-bold text-green-600 text-center">100 included</td>
+                        <td class="text-center text-gray-400">None</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">Complete Funnel Builder</td>
+                        <td class="webinarkit-column text-center"><i class="fas fa-check text-green-500 text-xl"></i></td>
+                        <td class="text-center"><i class="fas fa-times text-red-500 text-xl"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">Automated Webinars</td>
+                        <td class="webinarkit-column text-center"><i class="fas fa-check text-green-500 text-xl"></i></td>
+                        <td class="text-center"><i class="fas fa-check text-green-500 text-xl"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">Live Webinars</td>
+                        <td class="webinarkit-column text-center"><i class="fas fa-check text-green-500 text-xl"></i></td>
+                        <td class="text-center"><i class="fas fa-times text-red-500 text-xl"></i></td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">Revenue Potential</td>
+                        <td class="webinarkit-column font-bold text-green-600 text-center">$10K-$50K/mo</td>
+                        <td class="text-center text-gray-400">$0 (costs only)</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">Setup Time</td>
+                        <td class="webinarkit-column font-bold text-green-600 text-center">10 minutes</td>
+                        <td class="text-center text-red-600 font-semibold">40+ hours</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-gray-900">Annual Savings vs EverWebinar</td>
+                        <td class="webinarkit-column font-bold text-green-600 text-center">Save $4,967/year</td>
+                        <td class="text-center text-gray-400">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Cost Comparison Breakdown -->
+        <div class="bg-yellow-50 p-8 rounded-2xl border-2 border-yellow-200 mb-8">
+            <h3 class="text-2xl font-bold text-center text-gray-900 mb-6">💰 Annual Cost Breakdown</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-xl font-bold text-red-700 mb-4">EverWebinar Pro Cost:</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• EverWebinar Pro: $497/month × 12 = <strong>$5,964/year</strong></li>
+                        <li>• Manual creation time: 40+ hours × $100/hour = <strong>$4,000+ per webinar</strong></li>
+                        <li>• No revenue generation capability</li>
+                        <li class="text-red-600 font-bold">Total Annual Cost: $5,964+ (plus time costs)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-green-700 mb-4">WebinarKit Total Value:</h4>
+                    <ul class="space-y-2 text-gray-700">
+                        <li>• WebinarKit: $83/month × 12 = <strong>$997/year</strong></li>
+                        <li>• AI creation time: 10 minutes (essentially free)</li>
+                        <li>• Revenue potential: $10K-$50K/month from white label</li>
+                        <li class="text-green-600 font-bold">Net Profit Potential: $120K-$600K/year</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <p class="text-sm text-gray-600 mb-4">*Annual billing. 2 client accounts at $49/mo = software pays for itself</p>
+            <a href="#pricing" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl">
+                Switch to WebinarKit - Save $4,967/Year
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Money Making Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-8">
+                Why WebinarKit <span class="text-green-500">MAKES</span> You Money<br>
+                While EverWebinar Just Costs You Money
+            </h2>
+            <p class="text-xl text-gray-600 max-w-4xl mx-auto">
+                EverWebinar is just an expense. WebinarKit's white label feature turns your software cost into a profit center generating $10K-$50K/month passive income.
+            </p>
+        </div>
+
+        <!-- ROI Calculator -->
+        <div class="slider-container max-w-4xl mx-auto">
+            <h3 class="text-2xl font-bold text-center mb-8">Your Revenue Potential vs EverWebinar Costs</h3>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <label class="block text-lg font-semibold mb-4">Number of Clients:</label>
+                    <input type="range" id="clientSlider" min="0" max="100" value="20" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-sm text-gray-600 mt-2">
+                        <span>0</span>
+                        <span id="clientCount" class="font-bold text-blue-600">20</span>
+                        <span>100</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-lg font-semibold mb-4">Monthly Price per Client:</label>
+                    <input type="range" id="priceSlider" min="49" max="497" value="97" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-sm text-gray-600 mt-2">
+                        <span>$49</span>
+                        <span id="monthlyPrice" class="font-bold text-blue-600">$97</span>
+                        <span>$497</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- WebinarKit Profit -->
+                <div class="bg-green-50 p-6 rounded-xl border-2 border-green-200">
+                    <h4 class="text-xl font-bold text-green-700 mb-4 text-center">WebinarKit Profit</h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Monthly Revenue:</span>
+                            <span id="monthlyRevenue" class="font-bold text-green-600">$1,940</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Annual Revenue:</span>
+                            <span id="annualRevenue" class="font-bold text-green-600">$23,280</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">WebinarKit Cost:</span>
+                            <span class="font-bold text-gray-600">-$997</span>
+                        </div>
+                        <div class="border-t pt-2">
+                            <div class="flex justify-between">
+                                <span class="text-lg font-bold text-gray-600">Net Profit:</span>
+                                <span id="netProfit" class="text-xl font-bold text-green-600">$22,283</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EverWebinar Cost -->
+                <div class="bg-red-50 p-6 rounded-xl border-2 border-red-200">
+                    <h4 class="text-xl font-bold text-red-700 mb-4 text-center">EverWebinar Loss</h4>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Monthly Revenue:</span>
+                            <span class="font-bold text-red-600">$0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">Annual Revenue:</span>
+                            <span class="font-bold text-red-600">$0</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">EverWebinar Cost:</span>
+                            <span class="font-bold text-red-600">-$5,964</span>
+                        </div>
+                        <div class="border-t pt-2">
+                            <div class="flex justify-between">
+                                <span class="text-lg font-bold text-gray-600">Net Loss:</span>
+                                <span class="text-xl font-bold text-red-600">-$5,964</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-6 bg-blue-50 p-6 rounded-xl">
+                <p class="text-2xl font-bold text-blue-600">WebinarKit Advantage: <span id="totalAdvantage">$28,247/year</span></p>
+                <p class="text-gray-600 mt-2">Just 2 clients at $49/month = WebinarKit pays for itself!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Comparison -->
+<section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                What You Get with WebinarKit vs EverWebinar
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- WebinarKit Features -->
+            <div class="bg-green-50 p-8 rounded-2xl border-2 border-green-200">
+                <h3 class="text-3xl font-bold text-green-700 text-center mb-8">WebinarKit Includes</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-robot text-green-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>AI Webinar Creator:</strong> Complete webinars in 10 minutes using $5M+ proven frameworks
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-tag text-green-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>White Label Rights:</strong> Rebrand and resell for $10K-$50K/month passive income
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-users text-green-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>100 Client Subaccounts:</strong> Built-in revenue generation system
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-video text-green-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>Live + Automated Webinars:</strong> Complete flexibility for all use cases
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-funnel-dollar text-green-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>Complete Funnel Builder:</strong> Registration pages, email sequences, analytics
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-clock text-green-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>10-Minute Setup:</strong> AI does everything for you
+                        </div>
+                    </li>
+                </ul>
+                <div class="text-center mt-8">
+                    <div class="text-3xl font-bold text-green-600">$83/month</div>
+                    <div class="text-gray-600">Pays for itself + generates profit</div>
+                </div>
+            </div>
+
+            <!-- EverWebinar Features -->
+            <div class="bg-red-50 p-8 rounded-2xl border-2 border-red-200">
+                <h3 class="text-3xl font-bold text-red-700 text-center mb-8">EverWebinar Limitations</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>No AI Creation:</strong> Must create everything manually (40+ hours each)
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>No White Label:</strong> Cannot resell or generate additional revenue
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>No Subaccounts:</strong> Cannot create client accounts or recurring revenue
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>Automated Only:</strong> No live webinar capabilities
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>Limited Funnel Tools:</strong> Basic registration pages only
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1 text-xl"></i>
+                        <div>
+                            <strong>Manual Setup:</strong> Hours of configuration required
+                        </div>
+                    </li>
+                </ul>
+                <div class="text-center mt-8">
+                    <div class="text-3xl font-bold text-red-600">$497/month</div>
+                    <div class="text-gray-600">Pure expense, no revenue generation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                EverWebinar Users Who Switched to WebinarKit
+            </h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg border">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">SM</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">Sarah Miller</h4>
+                        <p class="text-sm text-gray-600">Former EverWebinar User</p>
+                        <div class="flex text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700">"I wasted 2 years with EverWebinar creating webinars manually. WebinarKit's AI created a better webinar in 10 minutes than I ever made in weeks. Plus I'm now making $8K/month reselling it to clients!"</p>
+            </div>
+
+            <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg border">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">DJ</span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900">David Johnson</h4>
+                        <p class="text-sm text-gray-600">Agency Owner</p>
+                        <div class="flex text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700">"EverWebinar was costing me $497/month with zero revenue potential. WebinarKit costs $83/month and I'm generating $15K/month in passive income. Best switch I ever made!"</p>
+            </div>
+
+            <div class="testimonial-card bg-white p-6 rounded-xl shadow-lg border">
+                <div class="flex items-center mb-4">
+                    <img src="https://getwebinarkit.com/wp/wp-content/uploads/2022/12/gidon.jpg" alt="Gidon" class="w-12 h-12 rounded-full mr-4">
+                    <div>
+                        <h4 class="font-bold text-gray-900">Gidon</h4>
+                        <p class="text-sm text-gray-600">Founder & CEO</p>
+                        <div class="flex text-yellow-400 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700">"I can't believe it, I did 5 sales at $5,000 already in the first week of the webinar being live! EverWebinar never delivered results like this."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section id="pricing" class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <div class="red-banner text-white px-8 py-4 rounded-full inline-block mb-6">
+                <span class="font-bold text-lg">🎯 SAVE $4,967/YEAR vs EVERWEBINAR</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Switch from EverWebinar and Start Making Money
+            </h2>
+            <p class="text-xl text-gray-600">
+                Stop paying $497/month for a tool that just costs money. Start with WebinarKit and generate passive income.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <!-- WebinarKit Plan -->
+            <div class="pricing-card annual-highlight p-8 rounded-2xl shadow-lg border-4 border-green-400 relative">
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-400 text-black px-6 py-2 rounded-full font-bold text-sm">
+                    SAVE $4,967/YEAR
+                </div>
+                
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold mb-4">WebinarKit Complete</h3>
+                    <div class="mb-4">
+                        <span class="text-5xl font-bold">$83</span>
+                        <span class="text-xl opacity-80">/mo</span>
+                    </div>
+                    <p class="text-lg opacity-80 mb-2">$997 billed annually</p>
+                    <p class="text-sm text-yellow-300 font-semibold">vs EverWebinar's $5,964/year</p>
+                </div>
+                
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-300 mr-3 mt-1"></i>
+                        <span>AI webinar creation (10 minutes vs 40+ hours)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-300 mr-3 mt-1"></i>
+                        <span>White label rights for passive income</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-300 mr-3 mt-1"></i>
+                        <span>100 client subaccounts included</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-300 mr-3 mt-1"></i>
+                        <span>Live + automated webinars</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-300 mr-3 mt-1"></i>
+                        <span>Complete funnel builder</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-green-300 mr-3 mt-1"></i>
+                        <span>$10K-$50K/month revenue potential</span>
+                    </li>
+                </ul>
+
+                <div class="bg-white bg-opacity-20 p-4 rounded-lg pricing-spacing">
+                    <p class="text-center font-semibold text-white">Pays for itself + generates profit</p>
+                </div>
+
+                <a href="https://ashkemp--mkeymarketing.thrivecart.com/best-webinarkit-deal-ever/66071a74ef52f?pricing=annual" class="w-full bg-white text-blue-600 py-4 px-6 rounded-lg font-bold text-lg transition-all duration-200 hover:bg-gray-100 block text-center">
+                    Switch to WebinarKit Now
+                </a>
+            </div>
+
+            <!-- EverWebinar Comparison -->
+            <div class="bg-red-50 p-8 rounded-2xl shadow-lg border-2 border-red-200">
+                <div class="text-center mb-8">
+                    <h3 class="text-3xl font-bold text-red-700 mb-4">EverWebinar Cost</h3>
+                    <div class="mb-4">
+                        <span class="text-5xl font-bold text-red-600">$497</span>
+                        <span class="text-xl text-red-600">/mo</span>
+                    </div>
+                    <p class="text-lg text-red-600 mb-2">$5,964 billed annually</p>
+                    <p class="text-sm text-red-700 font-semibold">Pure expense - no income generation</p>
+                </div>
+                
+                <ul class="space-y-4 mb-8 opacity-75">
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                        <span>Manual webinar creation (40+ hours each)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                        <span>No white label or resale rights</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                        <span>No client subaccounts</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                        <span>Automated webinars only</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                        <span>Basic funnel capabilities</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                        <span>$0 revenue potential</span>
+                    </li>
+                </ul>
+
+                <div class="bg-red-100 p-4 rounded-lg pricing-spacing">
+                    <p class="text-center font-semibold text-red-700">Costs money, makes none</p>
+                </div>
+
+                <div class="w-full bg-gray-300 text-gray-500 py-4 px-6 rounded-lg font-bold text-lg text-center cursor-not-allowed">
+                    Keep Losing Money
+                </div>
+            </div>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="text-center mt-12">
+            <div class="inline-flex items-center space-x-4 bg-green-50 px-8 py-4 rounded-full border-2 border-green-200">
+                <i class="fas fa-shield-alt text-green-600 text-2xl"></i>
+                <span class="text-lg font-semibold text-green-700">30-Day Money-Back Guarantee</span>
+            </div>
+            <p class="text-gray-600 mt-4">Risk-free switch from EverWebinar. Cancel anytime and keep your data.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Make the Smart Switch from EverWebinar
+        </h2>
+        <p class="text-xl mb-8 opacity-90">
+            Stop paying $497/month for manual webinar creation. Start generating $10K-$50K/month passive income with AI-powered WebinarKit.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a href="https://ashkemp--mkeymarketing.thrivecart.com/best-webinarkit-deal-ever/66071a74ef52f?pricing=annual" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl">
+                Switch Now - Save $4,967/Year
+            </a>
+            <a href="index.html" class="bg-blue-600 hover:bg-blue-700 border-2 border-white text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-200">
+                Learn More About WebinarKit
+            </a>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-8 text-blue-100">
+            <div class="flex items-center">
+                <i class="fas fa-shield-alt mr-2"></i>
+                <span>30-Day Money-Back Guarantee</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-clock mr-2"></i>
+                <span>Setup in 10 Minutes</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-dollar-sign mr-2"></i>
+                <span>Generate Passive Income</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <img src="https://webinarkit.net/img/webinarkit.svg" alt="WebinarKit" class="h-8 mx-auto mb-6 filter brightness-0 invert">
+            <p class="text-gray-400 mb-4">© 2024 WebinarKit. All rights reserved.</p>
+            <p class="text-sm text-gray-500 max-w-2xl mx-auto">
+                This site is not a part of the Facebook website or Facebook INC. Additionally, this site is NOT endorsed by Facebook in ANY WAY. Facebook is a trademark of Facebook INC.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ROI Calculator
+function updateCalculator() {
+    const clients = document.getElementById('clientSlider').value;
+    const monthlyPrice = document.getElementById('priceSlider').value;
+    
+    document.getElementById('clientCount').textContent = clients;
+    document.getElementById('monthlyPrice').textContent = '$' + monthlyPrice;
+    
+    const monthlyRevenue = clients * monthlyPrice;
+    const annualRevenue = monthlyRevenue * 12;
+    const netProfit = annualRevenue - 997;
+    const everWebinarLoss = 5964;
+    const totalAdvantage = netProfit + everWebinarLoss;
+    
+    document.getElementById('monthlyRevenue').textContent = '$' + monthlyRevenue.toLocaleString();
+    document.getElementById('annualRevenue').textContent = '$' + annualRevenue.toLocaleString();
+    document.getElementById('netProfit').textContent = '$' + netProfit.toLocaleString();
+    document.getElementById('totalAdvantage').textContent = '$' + totalAdvantage.toLocaleString() + '/year';
+}
+
+document.getElementById('clientSlider').addEventListener('input', updateCalculator);
+document.getElementById('priceSlider').addEventListener('input', updateCalculator);
+
+// Smooth Scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Initialize calculator on page load
+document.addEventListener('DOMContentLoaded', updateCalculator);
+</script>
+
 </body>
 </html>
+    <script id="html_badge_script1">
+        window.__genspark_remove_badge_link = "https://www.genspark.ai/api/html_badge/" +
+            "remove_badge?token=To%2FBnjzloZ3UfQdcSaYfDmPwPHXXpXvspejg%2BvN7KLtL3MeLxh%2ByBRu71Zkq419zsgo%2FwZQfczFRdPdAtdbka5Ky6fiKsIaoFlO3DglQ6F9b%2FpmJztf70yRgJPpKZzvNFCzS2U5aYTmotYftE6KRmiPiSbhVZfd2G3K2TnUZTkDm0D0%2BYifGS9jMI3iXmyGH6Ye9yLS1%2BqmwDT2QOgRVuDDhJ1SzwMngNghED5XTqmTIPDrSpR6wJae0OstyKL%2BGmkuYgnbsL1MOwO5ZaGFBS4u3hpqpsiX1AfmOQhaEVmYHBhkMZ0Wif4PRQ%2BmoxDvMO3yius%2B5pLPvS6MjpOb66zIYJlwVgdNJF816Zt3jFTU0AsccrH3SAS80TjGx0sxJCtyX%2BhE0HEdPIK2YMFsRhgfX85q7jgul02%2BZhnZIJ2xqjqGXp1p%2FNw7hc6IFUiZFnyZDlDlax2CgpHr87XnbWzd8wIDKLqMoKmFPPlqT9NT9LsqcsHPl6rY4N%2BfzHbeOD7UkufeCr0Nbv61DBHpcIw%3D%3D";
+        window.__genspark_locale = "en-US";
+        window.__genspark_token = "To/BnjzloZ3UfQdcSaYfDmPwPHXXpXvspejg+vN7KLtL3MeLxh+yBRu71Zkq419zsgo/wZQfczFRdPdAtdbka5Ky6fiKsIaoFlO3DglQ6F9b/pmJztf70yRgJPpKZzvNFCzS2U5aYTmotYftE6KRmiPiSbhVZfd2G3K2TnUZTkDm0D0+YifGS9jMI3iXmyGH6Ye9yLS1+qmwDT2QOgRVuDDhJ1SzwMngNghED5XTqmTIPDrSpR6wJae0OstyKL+GmkuYgnbsL1MOwO5ZaGFBS4u3hpqpsiX1AfmOQhaEVmYHBhkMZ0Wif4PRQ+moxDvMO3yius+5pLPvS6MjpOb66zIYJlwVgdNJF816Zt3jFTU0AsccrH3SAS80TjGx0sxJCtyX+hE0HEdPIK2YMFsRhgfX85q7jgul02+ZhnZIJ2xqjqGXp1p/Nw7hc6IFUiZFnyZDlDlax2CgpHr87XnbWzd8wIDKLqMoKmFPPlqT9NT9LsqcsHPl6rY4N+fzHbeOD7UkufeCr0Nbv61DBHpcIw==";
+    </script>
+    
+    <script id="html_notice_dialog_script" src="https://www.genspark.ai/notice_dialog.js"></script>
+    

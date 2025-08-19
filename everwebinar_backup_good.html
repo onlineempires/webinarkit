@@ -3,39 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Everwebinar Backup Good</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-<style>
-.nav-dropdown:hover .dropdown-menu { display: block; }
-</style>
-
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    /* robust dropdown behavior */
+    .dropdown-menu{display:none}
+    .nav-dropdown:hover .dropdown-menu{display:block}
+    .dropdown-menu:hover{display:block}
+  </style>
+  <script>
+    // Mobile/touch fallback: toggle on click, close on outside click
+    document.addEventListener('DOMContentLoaded', function(){
+      var btn = document.getElementById('dd-trigger');
+      var menu = document.getElementById('dd-menu');
+      if(!btn || !menu) return;
+      btn.addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+      });
+      document.addEventListener('click', function(e){
+        if(!menu.contains(e.target) && !btn.contains(e.target)){
+          menu.style.display = 'none';
+        }
+      });
+      // Hide on navigation
+      menu.querySelectorAll('a').forEach(function(a){
+        a.addEventListener('click', function(){ menu.style.display = 'none'; });
+      });
+    });
+  </script>
+  <title>WebinarKit vs EverWebinar</title>
 </head>
 <body class="bg-white">
-  
+<!-- Header (shared across pages) -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
+    <div class="flex justify-between items-center h-16 relative">
       <!-- Logo -->
       <div class="flex items-center">
-        <a href="index.html" class="flex-shrink-0">
+        <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
           <img src="https://webinarkit.net/img/webinarkit.svg" alt="WebinarKit" class="h-5 w-auto">
+          <span class="font-extrabold text-xl">WebinarKit</span>
         </a>
       </div>
 
-      <!-- Dropdown (pure CSS hover) -->
+      <!-- Dropdown -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-8">
           <div class="relative nav-dropdown">
-            <button class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center border rounded-md">
+            <button id="dd-trigger" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center border rounded-md select-none">
               WebinarKit Vs Competitors
               <i class="fas fa-chevron-down ml-1 text-xs"></i>
             </button>
 
             <!-- Menu -->
-            <div class="dropdown-menu hidden absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg">
+            <div id="dd-menu" class="dropdown-menu absolute left-0 top-full mt-2 w-64 bg-white rounded-md shadow-lg border">
               <div class="py-1">
                 <a href="gotowebinar_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs GoToWebinar</a>
                 <a href="zoom_backup_good.html"        class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs Zoom</a>
@@ -47,13 +72,16 @@
         </div>
       </div>
 
+      <!-- Mobile menu button (optional) -->
+      <div class="md:hidden">
+        <a href="gotowebinar_backup_good.html" class="px-3 py-2 text-sm text-gray-700 border rounded-md">Comparisons</a>
+      </div>
     </div>
   </nav>
 </header>
 
-  <main class="p-8">
-    <h1 class="text-3xl font-bold mb-4">Everwebinar</h1>
-    <p>This is the placeholder for everwebinar_backup_good.html content. Replace with your real page body.</p>
-  </main>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<h1 class="text-3xl font-extrabold mb-4">WebinarKit vs EverWebinar</h1><p>Replace with your EverWebinar comparison content.</p>
+</main>
 </body>
 </html>

@@ -111,9 +111,51 @@
 
 <!-- Dropdown reliability helpers -->
 <style>
-  .dropdown-menu{display:none}
-  .nav-dropdown:hover .dropdown-menu{display:block}
-  .dropdown-menu:hover{display:block}
+  .dropdown-menu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transition-delay: 0s;
+  }
+  
+  .nav-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  
+  .dropdown-menu:hover {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+  
+  /* Add a small buffer area to prevent dropdown from disappearing */
+  .nav-dropdown::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+    z-index: 999;
+  }
+  
+  /* Ensure dropdown stays visible when hovering over it */
+  .nav-dropdown {
+    position: relative;
+  }
+  
+  .nav-dropdown:hover .dropdown-menu,
+  .nav-dropdown .dropdown-menu:hover {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
 </style>
 
 </head>

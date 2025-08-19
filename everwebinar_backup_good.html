@@ -179,13 +179,546 @@
     position: relative;
   }
   
-  .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:hover .dropdown-menu,
   .nav-dropdown .dropdown-menu:hover {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
   }
+
+  /* Premium Mobile Navigation Design - World Class */
+
+  /* Mobile Navigation Styles */
+  .mobile-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 12px;
+    z-index: 1001;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger:hover {
+    background-color: rgba(79, 70, 229, 0.08);
+  }
+
+  .hamburger span {
+    width: 24px;
+    height: 2px;
+    background-color: #1F2937;
+    margin: 2px 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+    background-color: #4F46E5;
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+    background-color: #4F46E5;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 320px;
+    height: 100vh;
+    background: #FFFFFF;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 0;
+    overflow-y: auto;
+    border-right: 1px solid #E5E7EB;
+  }
+
+  .mobile-menu.active {
+    left: 0;
+  }
+
+  .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+  }
+
+  .mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Mobile Menu Header */
+  .mobile-menu-header {
+    padding: 24px 24px 16px 24px;
+    border-bottom: 1px solid #F3F4F6;
+    background: #FAFBFC;
+  }
+
+  .mobile-menu-logo {
+    height: 32px;
+    width: auto;
+  }
+
+  .mobile-menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+  }
+
+  .mobile-menu-close:hover {
+    background-color: #F3F4F6;
+  }
+
+  .mobile-menu-close::before,
+  .mobile-menu-close::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background-color: #6B7280;
+    border-radius: 1px;
+  }
+
+  .mobile-menu-close::before {
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-close::after {
+    transform: rotate(-45deg);
+  }
+
+  /* Mobile Menu Content */
+  .mobile-menu-content {
+    padding: 8px 0;
+  }
+
+  .mobile-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    color: #1F2937;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+  }
+
+  .mobile-menu-item:hover {
+    background-color: #F8FAFC;
+    color: #4F46E5;
+  }
+
+  .mobile-menu-item:active {
+    background-color: #EEF2FF;
+  }
+
+  /* Mobile Menu Icons */
+  .mobile-menu-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #6B7280;
+    transition: color 0.2s ease;
+  }
+
+  .mobile-menu-item:hover .mobile-menu-icon {
+    color: #4F46E5;
+  }
+
+  /* Competitors Section */
+  .mobile-competitors-section {
+    margin-top: 8px;
+    border-top: 1px solid #F3F4F6;
+  }
+
+  .mobile-menu-section-title {
+    padding: 16px 24px 8px 24px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin: 0;
+  }
+
+  .mobile-competitor-item {
+    display: flex;
+    align-items: center;
+    padding: 14px 24px;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.4;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+  }
+
+  .mobile-competitor-item:hover {
+    background-color: #F8FAFC;
+    color: #1F2937;
+    border-left-color: #4F46E5;
+  }
+
+  .mobile-competitor-item.active {
+    background-color: #EEF2FF;
+    color: #4F46E5;
+    border-left-color: #4F46E5;
+    font-weight: 600;
+  }
+
+  .competitor-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none !important;
+    }
+    
+    .mobile-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    .hamburger {
+      display: flex;
+    }
+    
+    /* Hide desktop dropdown completely on mobile */
+    .nav-dropdown {
+      display: none !important;
+    }
+    
+    /* Mobile-specific header adjustments */
+    .header-container {
+      padding: 16px;
+      min-height: 64px;
+    }
+    
+    .logo-mobile {
+      height: 32px;
+      width: auto;
+    }
+    
+    /* Mobile typography improvements */
+    body {
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    h1 {
+      font-size: 32px !important;
+      line-height: 1.25 !important;
+      margin-bottom: 16px !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.025em !important;
+    }
+    
+    h2 {
+      font-size: 28px !important;
+      line-height: 1.3 !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.02em !important;
+    }
+    
+    h3 {
+      font-size: 24px !important;
+      line-height: 1.4 !important;
+      font-weight: 600 !important;
+    }
+    
+    /* Mobile button improvements */
+    .btn, button, .button {
+      padding: 16px 24px !important;
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      min-height: 52px;
+      border-radius: 8px !important;
+      touch-action: manipulation;
+      transition: all 0.2s ease !important;
+    }
+    
+    /* Mobile spacing improvements */
+    .container {
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+    
+    /* Mobile form improvements */
+    input, select, textarea {
+      font-size: 16px !important;
+      min-height: 52px;
+      padding: 16px !important;
+      border-radius: 8px !important;
+      border: 2px solid #E5E7EB !important;
+      transition: border-color 0.2s ease !important;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      border-color: #4F46E5 !important;
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1) !important;
+    }
+    
+    /* Mobile card improvements */
+    .card, .feature-card {
+      margin-bottom: 20px !important;
+      padding: 24px !important;
+      border-radius: 12px !important;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Mobile text improvements */
+    p {
+      line-height: 1.7 !important;
+      margin-bottom: 16px !important;
+    }
+    
+    /* Ensure no text overflow */
+    * {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      hyphens: auto;
+    }
+    
+    /* Mobile hero section */
+    .hero-section {
+      padding: 40px 20px !important;
+    }
+    
+    .hero-section h1 {
+      font-size: 28px !important;
+      line-height: 1.2 !important;
+      margin-bottom: 20px !important;
+    }
+    
+    .hero-section p {
+      font-size: 18px !important;
+      line-height: 1.6 !important;
+      margin-bottom: 24px !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .mobile-menu {
+      width: 100%;
+      left: -100%;
+    }
+    
+    h1 {
+      font-size: 26px !important;
+      line-height: 1.2 !important;
+    }
+    
+    h2 {
+      font-size: 22px !important;
+      line-height: 1.3 !important;
+    }
+    
+    h3 {
+      font-size: 20px !important;
+    }
+    
+    .container {
+      padding-left: 16px !important;
+      padding-right: 16px !important;
+    }
+    
+    .hero-section h1 {
+      font-size: 24px !important;
+    }
+    
+    .hero-section p {
+      font-size: 16px !important;
+    }
+  }
+
+  /* Premium animations */
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .mobile-menu.active {
+    animation: slideInLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-overlay.active {
+    animation: fadeIn 0.3s ease;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Focus states for accessibility */
+  .mobile-menu-item:focus,
+  .mobile-competitor-item:focus {
+    outline: 2px solid #4F46E5;
+    outline-offset: -2px;
+    background-color: #EEF2FF;
+  }
 </style>
+
+<script>
+function toggleMobileMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.mobile-overlay');
+  const body = document.body;
+  
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  overlay.classList.toggle('active');
+  
+  // Prevent body scroll when menu is open
+  if (mobileMenu.classList.contains('active')) {
+    body.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+    body.style.width = '100%';
+  } else {
+    body.style.overflow = '';
+    body.style.position = '';
+    body.style.width = '';
+  }
+}
+
+function closeMobileMenu() {
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.mobile-overlay');
+  const body = document.body;
+  
+  hamburger.classList.remove('active');
+  mobileMenu.classList.remove('active');
+  overlay.classList.remove('active');
+  
+  // Restore body scroll
+  body.style.overflow = '';
+  body.style.position = '';
+  body.style.width = '';
+}
+
+// Enhanced mobile menu functionality
+document.addEventListener('DOMContentLoaded', function() {
+  // Close menu when clicking on menu items
+  document.querySelectorAll('.mobile-menu-item, .mobile-competitor-item').forEach(item => {
+    item.addEventListener('click', function(e) {
+      // Add small delay for better UX
+      setTimeout(closeMobileMenu, 150);
+    });
+  });
+  
+  // Handle window resize
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+      closeMobileMenu();
+    }
+  });
+  
+  // Handle escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
+  });
+  
+  // Highlight current page in mobile menu
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const competitorPages = {
+    'gotowebinar_backup_good.html': 0,
+    'zoom_backup_good.html': 1,
+    'demio_backup_good.html': 2,
+    'everwebinar_backup_good.html': 3
+  };
+  
+  if (competitorPages.hasOwnProperty(currentPage)) {
+    const competitorItems = document.querySelectorAll('.mobile-competitor-item');
+    if (competitorItems[competitorPages[currentPage]]) {
+      competitorItems[competitorPages[currentPage]].classList.add('active');
+    }
+  }
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+</script>
 
 </head>
 <body class="bg-white">
@@ -201,55 +734,169 @@
 <!-- Header -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16 relative">
-      <!-- Logo -->
-      <div class="flex items-center">
-        <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
-          <img src="https://webinarkit.net/img/webinarkit.svg" alt="WebinarKit" class="h-8 w-auto">
-        </a>
-      </div>
+    <div class="flex justify-between items-center h-16 relative header-container">
+      <!-- Desktop Navigation -->
+      <div class="desktop-nav flex justify-between items-center w-full">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <a href="index.html" class="flex-shrink-0 flex items-center gap-2">
+            <img src="https://webinarkit.net/img/webinarkit.svg" alt="WebinarKit" class="h-8 w-auto">
+          </a>
+        </div>
 
-      <!-- Navigation -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-8">
-          <div class="relative nav-dropdown">
-            <button id="dd-trigger" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center select-none">
-              WebinarKit Vs Competitors
-              <i class="fas fa-chevron-down ml-1 text-xs"></i>
-            </button>
+        <!-- Desktop Navigation -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <div class="relative nav-dropdown">
+              <button id="dd-trigger" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium flex items-center select-none">
+                WebinarKit Vs Competitors
+                <i class="fas fa-chevron-down ml-1 text-xs"></i>
+              </button>
 
-            <!-- Menu -->
-            <div id="dd-menu" class="dropdown-menu absolute left-0 top-full mt-2 w-64 bg-white rounded-md shadow-lg border">
-              <div class="py-1">
-                <a href="gotowebinar_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs GoToWebinar</a>
-                <a href="zoom_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs Zoom</a>
-                <a href="demio_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">WebinarKit vs Demio</a>
-                <a href="everwebinar_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 bg-blue-50 font-semibold">WebinarKit vs EverWebinar</a>
+              <!-- Desktop Dropdown Menu -->
+              <div id="dd-menu" class="dropdown-menu absolute left-0 top-full mt-2 w-64 bg-white rounded-md shadow-lg border">
+                <div class="py-1">
+                  <a href="gotowebinar_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center">
+                    <div class="w-4 h-4 rounded mr-3" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);"></div>
+                    WebinarKit vs GoToWebinar
+                  </a>
+                  <a href="zoom_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center">
+                    <div class="w-4 h-4 rounded mr-3" style="background: linear-gradient(135deg, #2D8CFF 0%, #1E40AF 100%);"></div>
+                    WebinarKit vs Zoom
+                  </a>
+                  <a href="demio_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center">
+                    <div class="w-4 h-4 rounded mr-3" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);"></div>
+                    WebinarKit vs Demio
+                  </a>
+                  <a href="everwebinar_backup_good.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center bg-blue-50 font-semibold">
+                    <div class="w-4 h-4 rounded mr-3" style="background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%);"></div>
+                    WebinarKit vs EverWebinar
+                  </a>
+                </div>
               </div>
             </div>
+            <a href="index.html#features" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</a>
+            <a href="index.html#pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
           </div>
-          <a href="index.html#features" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</a>
-          <a href="index.html#pricing" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</a>
         </div>
       </div>
 
-      <!-- Mobile quick link -->
-      <div class="md:hidden">
-        <a href="everwebinar_backup_good.html" class="px-3 py-2 text-sm text-gray-700 border rounded-md">Comparisons</a>
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav">
+        <a href="index.html" class="logo-link">
+          <img src="https://webinarkit.net/img/webinarkit.svg" alt="WebinarKit" class="logo-mobile" style="height: 32px;">
+        </a>
+        
+        <div class="hamburger" onclick="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </nav>
 </header>
 
+<!-- Mobile Menu Overlay -->
+<div class="mobile-overlay" onclick="closeMobileMenu()"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <!-- Mobile Menu Header -->
+  <div class="mobile-menu-header">
+    <img src="https://webinarkit.net/img/webinarkit.svg" alt="WebinarKit" class="mobile-menu-logo">
+    <button class="mobile-menu-close" onclick="closeMobileMenu()" aria-label="Close menu"></button>
+  </div>
+
+  <!-- Mobile Menu Content -->
+  <div class="mobile-menu-content">
+    <!-- Main Navigation -->
+    <a href="index.html" class="mobile-menu-item">
+      <div class="mobile-menu-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+      </div>
+      Home
+    </a>
+    
+    <a href="index.html#features" class="mobile-menu-item">
+      <div class="mobile-menu-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/>
+        </svg>
+      </div>
+      Features
+    </a>
+    
+    <a href="index.html#pricing" class="mobile-menu-item">
+      <div class="mobile-menu-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="1" x2="12" y2="23"/>
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+      </div>
+      Pricing
+    </a>
+
+    <!-- Competitors Section -->
+    <div class="mobile-competitors-section">
+      <h3 class="mobile-menu-section-title">Compare with Competitors</h3>
+      
+      <a href="gotowebinar_backup_good.html" class="mobile-competitor-item">
+        <div class="competitor-icon" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);"></div>
+        WebinarKit vs GoToWebinar
+      </a>
+      
+      <a href="zoom_backup_good.html" class="mobile-competitor-item">
+        <div class="competitor-icon" style="background: linear-gradient(135deg, #2D8CFF 0%, #1E40AF 100%);"></div>
+        WebinarKit vs Zoom
+      </a>
+      
+      <a href="demio_backup_good.html" class="mobile-competitor-item">
+        <div class="competitor-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);"></div>
+        WebinarKit vs Demio
+      </a>
+      
+      <a href="everwebinar_backup_good.html" class="mobile-competitor-item">
+        <div class="competitor-icon" style="background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%);"></div>
+        WebinarKit vs EverWebinar
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu">
+  <a href="index.html" class="mobile-menu-item">🏠 Home</a>
+  <a href="index.html#features" class="mobile-menu-item">⚡ Features</a>
+  <a href="index.html#pricing" class="mobile-menu-item">💰 Pricing</a>
+  
+  <div class="mobile-competitors-section">
+    <div class="mobile-menu-section">Competitors</div>
+    <a href="gotowebinar_backup_good.html" class="mobile-competitor-item">
+      <div class="competitor-icon" style="background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);"></div>
+      WebinarKit vs GoToWebinar
+    </a>
+    <a href="zoom_backup_good.html" class="mobile-competitor-item">
+      <div class="competitor-icon" style="background: linear-gradient(135deg, #2D8CFF 0%, #1E40AF 100%);"></div>
+      WebinarKit vs Zoom
+    </a>
+    <a href="demio_backup_good.html" class="mobile-competitor-item">
+      <div class="competitor-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);"></div>
+      WebinarKit vs Demio
+    </a>
+    <a href="everwebinar_backup_good.html" class="mobile-competitor-item" style="background-color: #EEF2FF;">
+      <div class="competitor-icon" style="background: linear-gradient(135deg, #EC4899 0%, #BE185D 100%);"></div>
+      WebinarKit vs EverWebinar ✓
+    </a>
+  </div>
+</div>
+
 <!-- Hero Section -->
 <section class="bg-gradient-to-b from-blue-50 to-white hero-close-spacing py-8 md:py-12">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Breadcrumb -->
-        <div class="text-sm text-gray-500 mb-4">
-            <a href="/" class="hover:text-blue-600">WebinarKit</a>
-            <span class="mx-2">›</span>
-            <span>WebinarKit vs EverWebinar</span>
-        </div>
         
         <div class="text-center">
             <div class="text-blue-600 font-bold text-sm md:text-base tracking-wider uppercase mb-3">
